@@ -45,7 +45,7 @@ Contiene la clase **Main**, encargada de ejecutar la aplicación, integrar los c
 GestorServicios gs = new GestorServicios();
 
 // Crear un Paseo Lacustre
-PaseoLacustre paseo1 = gs.crearPaseoLacustre();
+PaseoLacustre paseo1 = gs.crearPaseoLacustre1();
 
 // Obtener información del objeto
 System.out.println(paseo1.getNombre());
