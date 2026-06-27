@@ -9,7 +9,7 @@ Carrera:             Analista Programador Computacional
 Fecha de entrega:    29 de Junio del 2026
 ```
 ## Objetivo del proyecto
-- gestionar de manera eficiente la información de los recorridos turísticos disponibles de la agencia Llanquihue Tours clasificados por tipo, para mostrarlos en catálogos según las preferencias de sus clientes.
+- Gestionar de manera eficiente la información de los recorridos turísticos ofrecidos por la agencia "Llanquihue Tours" implementando un sistema de jerarquía de Clases con herencia simple, con la intención de continuar escalando el proyecto conforme a los nuevos requierimientos del cliente. 
 
  ---
  
