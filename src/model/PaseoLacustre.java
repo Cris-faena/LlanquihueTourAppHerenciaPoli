@@ -36,6 +36,17 @@ public class PaseoLacustre extends ServicioTuristico
      */
     public void setTipoEmbarcacion(String nuevaEmbarcacion) {this.tipoEmbarcacion = nuevaEmbarcacion;}
 
+    // Se implementa un método para practicar el polimorfismo:
+
+    /**
+     * Método que muestra un mensaje característico exclusivo de la Clase Paseo Lacustre
+     */
+    @Override
+    public void mostrarInformacion()
+    {
+        System.out.println("Este es un método específico de Paseo Lacustre, llamado: " + getNombre());
+    }
+
     // Se implementa un método "toString". Cabe señalar que hereda este método de la super clase, y agrega información específica de este objeto.
     /**
      * Método que devuelve información del objeto creado en forma de cadena de texto.

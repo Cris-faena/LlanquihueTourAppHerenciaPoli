@@ -48,6 +48,16 @@ public class ServicioTuristico
      */
     public void setDuracionHoras(double nuevaDuracion) {this.duracionHoras = nuevaDuracion;}
 
+    // Se implementa un método para practicar el polimorfismo:
+
+    /**
+     * Método que muestra un mensaje característico exclusivo de la Clase Servicio Turístico
+     */
+    public void mostrarInformacion()
+    {
+        System.out.println("Este es un método específico de Servicio Turístico, llamado: " + getNombre());
+    }
+
     // Se implementa un método "toString":
     /**
      * Método que devuleve información en una cadena de texto

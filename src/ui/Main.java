@@ -6,6 +6,10 @@ import model.PaseoLacustre;
 import model.RutaGastronomica;
 import model.ServicioTuristico;
 
+import javax.print.attribute.standard.ReferenceUriSchemesSupported;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Clase "Main" para ejecutar la aplicación:
  */
@@ -15,8 +19,7 @@ public class Main
      * Punto de entrada para la aplicación.
      * @param args "Array" de argumentos pasados al inicializar la aplicación
      */
-    public static void  main(String[] args)
-    {
+    public static void  main(String[] args) {
         // 1. Se crea un objeto "gs" (gestor de servicios), para implementar los métodos de dicha Clase:
         GestorServicios gs = new GestorServicios();
 
@@ -61,5 +64,61 @@ public class Main
         System.out.println(excursionCultural2);
         // Se imprime el resultado de un método específico del objeto, para comprobar que funciona:
         System.out.println(excursionCultural2.getLugarHistorico());
+
+        System.out.println();
+
+        // Se crea una nueva instancia de la clase "Gestor de Servicios":
+        GestorServicios gestorTours = new GestorServicios();
+
+        // Se crea una nueva lista "servicios nuevos" para almacenar la lista creada en el "gestor de servicios".
+        List <ServicioTuristico> serviciosNuevos = gestorTours.crearServicioAlTurista();
+
+        // Se implementa un título para mostrar por consola:
+        System.out.println(" === LISTA DE NUEVOS SERVICIOS LLANQUIHUE TOURS === ");
+
+        // Se establece un bucle FOREACH, para recorrer los elementos de la lista de objetos polimórficos creada:
+        for (ServicioTuristico servicios : serviciosNuevos)
+        {
+            System.out.println(" ----------------------------------------- ");
+            // Si uno de los elementos de la lista, es instancia de la Clase "Ruta Gastronómica":
+            if (servicios instanceof RutaGastronomica)
+            {
+                // Ejecuta este bloque de instrucciones:
+                RutaGastronomica ruta2 = (RutaGastronomica) servicios;
+                System.out.println("→ Es una Ruta Gastronómica");
+                ruta2.mostrarInformacion();
+            }
+            // Si uno de los elementos de la lista, es instancia de la Clase "Paseo Lacustre":
+            else if (servicios instanceof  PaseoLacustre)
+            {
+                // Ejecuta este bloque de instrucciones:
+                PaseoLacustre paseo2 = (PaseoLacustre) servicios;
+                System.out.println("→ Es un Paseo Lacustre");
+                paseo2.mostrarInformacion();
+            }
+            // Si uno de los elementos de la lista, es instancia de la Clase "Excursión Cultural":
+            else if (servicios instanceof ExcursionCultural)
+            {
+                // Ejecuta este bloque de instrucciones:
+                ExcursionCultural excursion2 = (ExcursionCultural) servicios;
+                System.out.println("→ Es una Excursion Cultural");
+                excursion2.mostrarInformacion();
+            }
+            // Si uno de los elementos de la lista, es instancia de la Clase "Servicio Turístico":
+            else if (servicios instanceof ServicioTuristico)
+            {
+                // Ejecuta este bloque de instrucciones:
+                ServicioTuristico servicio2 = (ServicioTuristico) servicios;
+                System.out.println("Es una Servicio Turistico genérico");
+                servicio2.mostrarInformacion();
+            }
+            // Si uno de los elementos de la lista, no pertenece a ninguna clase:
+            else
+            {
+                // Ejecuta estas instrucciones:
+                System.out.println("No se pudo determinar a qué Clase pertenece");
+                System.out.println();
+            }
+        }
     }
 }

@@ -5,6 +5,9 @@ import model.PaseoLacustre;
 import model.RutaGastronomica;
 import model.ServicioTuristico;
 
+import java.util.ArrayList;
+
+
 /**
  * Se implementa una Clase "Gestor de Servicios".
  * Se utiliza para crear objetos de forma rápida.
@@ -63,5 +66,21 @@ public class GestorServicios
     public ExcursionCultural crearExcursionCultural2()
     {
         return new ExcursionCultural("Visita al 'Museo del Lago de Todos Los Santos'", 5, "Museo tradicional de la 'región de Los Lagos'");
+    }
+
+    /**
+     * Método que crea una lista de objetos polimórficos.
+     * Se debe agregar manualmente los objetos, respetando el constructor de cada Clase.
+     * @return una "lista de objetos".
+     */
+    public ArrayList<ServicioTuristico> crearServicioAlTurista()
+    {
+        ArrayList<ServicioTuristico> servicios = new ArrayList<>();
+        servicios.add(new RutaGastronomica("paseo a McDonald", 2, 1));
+        servicios.add(new RutaGastronomica("Paseo a Chuck e Cheese", 2, 2));
+        servicios.add(new PaseoLacustre("Recorrido submarino del Lago Villarica", 10, "submarino Scorpene"));
+        servicios.add(new PaseoLacustre("Recorrido bajo el oceano pacífico", 5, "submarino O´Higgins"));
+        servicios.add(new ExcursionCultural("Visita a la Municipalidad de Los Lagos", 3, "municipalidad comunal"));
+        return servicios;
     }
 }
