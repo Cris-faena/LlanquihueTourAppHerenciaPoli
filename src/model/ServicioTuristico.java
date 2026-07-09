@@ -53,9 +53,9 @@ public class ServicioTuristico implements Registrable
     /**
      * Método que muestra un mensaje característico exclusivo de la Clase Servicio Turístico
      */
-    public void mostrarInformacion()
+    public String mostrarInformacion()
     {
-        System.out.println("Este es un método específico de Servicio Turístico, llamado: " + getNombre());
+        return "Este es un método específico de Servicio Turístico, llamado: " + getNombre();
     }
 
     // Se implementa un método "toString":

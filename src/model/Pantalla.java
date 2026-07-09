@@ -441,43 +441,37 @@ public class Pantalla extends JFrame
         actualizarAreaTexto();
     }
 
-    private void mostrarResumen()
-    {
-        if (servicioTuristico.isEmpty())
-        {
+    private void mostrarResumen() {
+        if (servicioTuristico.isEmpty()) {
             JOptionPane.showMessageDialog(this, "No existe un tours guardados en la lista");
             return;
         }
         areaTexto.setText("");
-        for (ServicioTuristico t : servicioTuristico)
-        {
+        for (ServicioTuristico t : servicioTuristico) {
             areaTexto.append("-----------------------------------------------" + "\n");
-            if (t instanceof PaseoLacustre)
-            {
+            if (t instanceof PaseoLacustre) {
                 PaseoLacustre lacustre = (PaseoLacustre) t;
                 areaTexto.append("→ esto es un paseo lacustre." + "\n");
                 areaTexto.append(lacustre.toString() + "\n");
                 areaTexto.append(lacustre.mostrarResumen() + "\n");
-            }
-            else if (t instanceof ExcursionCultural)
-            {
+                areaTexto.append(lacustre.mostrarInformacion() + "\n");
+            } else if (t instanceof ExcursionCultural) {
                 ExcursionCultural excursion = (ExcursionCultural) t;
                 areaTexto.append("→ esto es una excursión cultural️." + "\n");
                 areaTexto.append(excursion.toString() + "\n");
                 areaTexto.append(excursion.mostrarResumen() + "\n");
-            }
-            else if (t instanceof RutaGastronomica)
-            {
+                areaTexto.append(excursion.mostrarInformacion() + "\n");
+            } else if (t instanceof RutaGastronomica) {
                 RutaGastronomica gastronomica = (RutaGastronomica) t;
                 areaTexto.append("→ esto es una ruta gastronómica." + "\n");
                 areaTexto.append(gastronomica.toString() + "\n");
                 areaTexto.append(gastronomica.mostrarResumen() + "\n");
-            }
-            else
-            {
+                areaTexto.append(gastronomica.mostrarInformacion() + "\n");
+            } else {
                 JOptionPane.showMessageDialog(this, "No existe un tour con ese nombre");
             }
         }
+        areaTexto.append("-----------------------------------------------" + "\n");
     }
 
     // Método que sirve para actualizar el JTextArea:

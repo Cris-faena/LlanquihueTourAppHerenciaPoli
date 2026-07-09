@@ -42,9 +42,9 @@ public class PaseoLacustre extends ServicioTuristico implements Registrable
      * Método que muestra un mensaje característico exclusivo de la Clase Paseo Lacustre
      */
     @Override
-    public void mostrarInformacion()
+    public String mostrarInformacion()
     {
-        System.out.println("Este es un método específico de Paseo Lacustre, llamado: " + getNombre());
+        return "• Este es un método heredado, específico de Paseo Lacustre, llamado: " + getNombre();
     }
 
     // Se implementa un método "toString". Cabe señalar que hereda este método de la super clase, y agrega información específica de este objeto.
