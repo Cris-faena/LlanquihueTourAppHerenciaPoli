@@ -4,7 +4,7 @@ package model;
  * Se implementa una Clase 'Excursión Cultural' como 'Clase hija'.
  * Representa un recorrido por lugares históricos o tradicionales de la región.
  */
-public class ExcursionCultural extends ServicioTuristico
+public class ExcursionCultural extends ServicioTuristico implements Registrable
 {
     private String lugarHistorico;      // Atributo que representa un lugar histórico o tradicional para visitar.
 
@@ -54,7 +54,17 @@ public class ExcursionCultural extends ServicioTuristico
     @Override
     public String toString()
     {
-        return super.toString() + " , " + "Lugar histórico asignado: " + lugarHistorico;
+        return super.toString() + "•" + " " + "Lugar histórico asignado: " + lugarHistorico + ".";
+    }
+
+    // Se implementa un método "mostrar Resumen" sobrescrito desde la interface.
+    /**
+     * Método que muestra una cadena de texto sobrescrita desde la interface.
+     */
+    @Override
+    public String mostrarResumen()
+    {
+        return "• Este es el método 'mostrarResumen', copiado de la interface, para la instancia de Excursión Cultural";
     }
 }
 

@@ -4,10 +4,9 @@ package model;
  * Se implementa una Clase 'Ruta Gastronómica' como 'Clase hija'.
  * Representa un paseo que considera distintas paradas para comer en diversos lugares turísticos de la región.
  */
-public class RutaGastronomica extends ServicioTuristico
+public class RutaGastronomica extends ServicioTuristico implements Registrable
 {
     private int paradas;    // Atributo de la Clase para asignar la cantidad de detenciones consideradas en el tour.
-
     // Constructor de la clase con parámetros. Hereda de la superclase algunos atributos:
     public RutaGastronomica(String nombre, double duracionHoras, int paradas)
     {
@@ -18,7 +17,7 @@ public class RutaGastronomica extends ServicioTuristico
     public RutaGastronomica()
     {
         super("Sin nombre asignado", 0);    // Atributos heredados de la superclase.
-        this.paradas = 0;                                      // Atributo propio de la clase hija:
+        this.paradas = 0;                                      // Atributo propio de la clase hija.
     }
 
     // Se implementa un método "Getter". Cabe señalar que los otros métodos "Getters" los hereda de la superclase:
@@ -55,6 +54,16 @@ public class RutaGastronomica extends ServicioTuristico
     @Override
     public String toString()
     {
-        return super.toString() + "," + " " + "Paradas de la ruta: " + paradas;
+        return super.toString() + "•" + " " + "Paradas de la ruta: " + paradas + ".";
+    }
+
+    // Se implementa un método "mostrar Resumen" sobrescrito desde la interface.
+    /**
+     * Método que muestra una cadena de texto sobrescrita desde la interface.
+     */
+    @Override
+    public String mostrarResumen()
+    {
+        return "• Este es el método 'mostrarResumen', copiado de la interface, para la instancia de Ruta Gastronómica";
     }
 }

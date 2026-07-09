@@ -1,11 +1,9 @@
 package data;
 
-import model.ExcursionCultural;
-import model.PaseoLacustre;
-import model.RutaGastronomica;
-import model.ServicioTuristico;
+import model.*;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -82,5 +80,14 @@ public class GestorServicios
         servicios.add(new PaseoLacustre("Recorrido bajo el oceano pacífico", 5, "submarino O´Higgins"));
         servicios.add(new ExcursionCultural("Visita a la Municipalidad de Los Lagos", 3, "municipalidad comunal"));
         return servicios;
+    }
+
+    public List<Registrable> crearServicioRegistrable()
+    {
+        List<Registrable> registrables = new ArrayList<>();
+        registrables.add(new RutaGastronomica("Paseo a Burger King", 2, 1));
+        registrables.add(new RutaGastronomica("Paseo a Papa Johns", 2, 2));
+        registrables.add(new PaseoLacustre("Vuelta en kayac al lago todos los santos", 4, "Kayac de madera"));
+        return  registrables;
     }
 }

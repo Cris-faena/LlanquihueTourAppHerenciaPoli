@@ -4,7 +4,7 @@ package model;
  * Se implementa una Clase 'Paseo Lacustre' como 'Clase hija'.
  * Representa un recorrido por lagos y ríos de la región, en todo tipo de embarcaciones según disponibilidad.
  */
-public class PaseoLacustre extends ServicioTuristico
+public class PaseoLacustre extends ServicioTuristico implements Registrable
 {
     private String tipoEmbarcacion;     // Atributo de la Clase para describir el tipo de embarcación utilizada
 
@@ -56,6 +56,16 @@ public class PaseoLacustre extends ServicioTuristico
     @Override
     public String toString()
     {
-        return super.toString() + "," + " " + "Tipo de embarcación: " + tipoEmbarcacion;
+        return super.toString() + "•" + " " + "Tipo de embarcación: " + tipoEmbarcacion +".";
+    }
+
+    // Se implementa un método "mostrar Resumen" sobrescrito desde la interface.
+    /**
+     * Método que muestra una cadena de texto sobrescrita desde la interface.
+     */
+    @Override
+    public String mostrarResumen()
+    {
+        return "• Este es el método 'mostrarResumen', copiado de la interface, para la instancia de Paseo Lacustre";
     }
 }

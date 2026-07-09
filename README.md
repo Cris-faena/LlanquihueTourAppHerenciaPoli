@@ -6,7 +6,7 @@
 ```txt
 Nombre del Alumno:   Cristián Fáundez
 Carrera:             Analista Programador Computacional
-Fecha de entrega:    06 de Julio del 2026
+Fecha de entrega:    13 de Julio del 2026
 ```
 ## Objetivo del proyecto
 - Gestionar de manera eficiente la información de los recorridos turísticos ofrecidos por la agencia "Llanquihue Tours" implementando un sistema de jerarquía de Clases con herencia simple, con la intención de continuar escalando el proyecto conforme a los nuevos requierimientos del cliente. 
@@ -18,10 +18,14 @@ Fecha de entrega:    06 de Julio del 2026
 ```md
 📁 src/
 ├──ui/           # Clase principal con el método main
-├──model/        # Clases de dominio (Servicio turístico, Ruta gastronómica, Paseo lacustre, Excursión cultural)
+├──model/        # Clases de dominio (Servicio turístico, Ruta gastronómica, Paseo lacustre, Excursión cultural, Registrable y Pantalla)
 ├──data/         # Clase de Gestión de Servicios (Gestor Servicios)
+├──img/          # Carpeta con imágenes del funcionamiento de la GUI.
 ```
 ## ⚙️ Funcionamiento general
+
+### 🧩 Interfaz Gráfica de Usuario (GUI).
+Es la aplicación de escritorio del sistema de gestión de Llanquihue Tour. Permite ingresar, editar y eliminar los distintos "Tours" ingresados por el operador del software. Además, se puede ver en pantalla un resumen con todos los datos ingresados.
 
 ### 📌 Paquete `model`
 Contiene las clases base del sistema:
@@ -30,76 +34,51 @@ Contiene las clases base del sistema:
 - **RutaGastronomica**: recorrido que incluye restaurantes en cada una de sus paradas.
 - **PaseoLacustre**: recorrido por distintos lagos de la región, cada uno con su embarcación característica.
 - **ExcursionCultural**: recorrido por lugares históricos y emblemáticos de la región.
+- **Registrable**: es una "Interface" que implementa un método compartido por todas las clases. Toda clase que haga uso de ella, debe implementar por obligación su método "mostrarResumen".
+- **Pantalla**: clase que contiene la lógica para el funcionamiento interno de la interfaz gráfica de usuario (GUI).
 
 ### 📌 Paquete `data`
 Incluye la clase **GestorServicios**, responsable de crear automáticamente instancias de cualquiera de los servicios turísticos disponibles. Además, implementa un método llamado "crearServicioAlTurista", para almacenar colecciones polimórficas.
 
 ### 📌 Paquete `ui`
 Contiene la clase **Main**, encargada de ejecutar la aplicación, integrar los componentes y mostrar la información por consola.
+Además, se ha añadido una funcionalidad que permite ejecutar la aplicación con una interfaz gráfica.
+
+### 📌 Paquete `img`
+Contiene las imágenes que explican el funcionamiento de la interfaz gráfica de usuario (GUI).
 
 ---
-## 🛠️ Ejemplo de creación de objetos
+## 🛠️ Ejemplo de uso de la interfaz gráfica de usuario (GUI)
 
-```java
-// Crear un gestor
-GestorServicios gs = new GestorServicios();
+```md
+![Vista general de la GUI](src/img/principal.png)
 
-// Crear un Paseo Lacustre
-PaseoLacustre paseo1 = gs.crearPaseoLacustre1();
-
-// Obtener información del objeto
-System.out.println(paseo1.getNombre());
-System.out.println(paseo1.toString());
 ```
-## 🛠️ Ejemplo para recorrer una lista polimórfica:
 
-```java
-// Opción 1: Crear una Lista polimórfica que almacene distintos objetos en el Main:
+## 🛠️ Ejemplo para agregar nuevos tours a una colección:
 
-List<ServicioTuristico> listaPolimorfica = new ArrayList<>();
-
-// Añada distintos objetos creados previamente a la lista:
-listaPolimorfica.add(paseoLacustre1);
-listaPoliformica.add(rutaGastronomica2);
-
-// Recorra la lista por medio de un bucle FOREACH:
-for(ServicioTuristico servicio :listaPolimorfica)
-{
-    if(servicio instanceof PaseoLacustre)
-    {
-        PaseoLacustre paseo = (PaseoLacustre) servicio;
-        System.out.println("→ Es un Paseo Lacustre");
-        paseo.mostrarInformacion();
-    }
-}
-
-// Opción 2: Utilice el método "crearServicioAlTurista", de la Clase GestorServicios:
-public ArrayList<ServicioTuristico> crearServicioAlTurista() 
-{
-    ArrayList<ServicioTuristico> servicios = new ArrayList<>();
-
-    // Añada objetos respetando el constructor de cada clase:
-    servicios.add(new RutaGastronomica("paseo a McDonald", 2, 1));
-    return servicios;
-}
-
-// En el "Main" cree un nuevo objeto de la clase "Gestor Servicios":
-GestorServicios gestorTours = new GestorServicios();
-
-// Cree una nueva lista e invoque el método "crearServicioAlTurista":
-List<ServicioTuristico> serviciosNuevos = gestorTours.crearServicioAlTurista();
-
-// Recorra los elementos a través de un bucle FOREACH:
-for(ServicioTuristico servicios :serviciosNuevos)
-{
-    if(servicios instanceof RutaGastronomica)
-    {
-        RutaGastronomica ruta = (RutaGastronomica) servicios;
-        System.out.println("→ Es una Ruta Gastronómica");
-        ruta.mostrarInformacion();
-    }
-}
+```md
+![Agregar tour desde la GUI](src/img/agregar.png)
 ```
+
+## 🛠️ Ejemplo para editar tours de la colección:
+
+```md
+![Editar tour desde la GUI](src/img/editar.png)
+```
+
+## 🛠️ Ejemplo para eliminar último tour de una colección:
+
+```md
+![Eliminar tour desde la GUI](src/img/eliminar.png)
+```
+
+## 🛠️ Ejemplo para mostrar resumen de los tours de una colección:
+
+```md
+![Mostrar resumen desde la GUI](src/img/mostrar.png)
+```
+
 ## Instrucciones para ejecutar el proyecto
 1. Clona el repositorio desde GitHub:
 https://github.com/Cris-faena/LlanquihueTourAppHerenciaPoli.git

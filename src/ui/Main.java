@@ -1,13 +1,7 @@
 package ui;
 
 import data.GestorServicios;
-import model.ExcursionCultural;
-import model.PaseoLacustre;
-import model.RutaGastronomica;
-import model.ServicioTuristico;
-
-import javax.print.attribute.standard.ReferenceUriSchemesSupported;
-import java.util.ArrayList;
+import model.*;
 import java.util.List;
 
 /**
@@ -120,5 +114,39 @@ public class Main
                 System.out.println();
             }
         }
+        System.out.println();
+
+        List<Registrable> listaRegistrable = gestorTours.crearServicioRegistrable();
+
+        for (Registrable registrable : listaRegistrable)
+        {
+            System.out.println("Aca se inicia el nuevo recorrido");
+            registrable.mostrarResumen();
+            if (registrable instanceof PaseoLacustre)
+            {
+                System.out.println("Este es un paseo lacustre");
+            }
+            else if (registrable instanceof ExcursionCultural)
+            {
+                System.out.println("Este es un excursion cultural");
+            }
+            else if (registrable instanceof RutaGastronomica)
+            {
+                System.out.println("Este es un ruta Gastronómica");
+            }
+            else
+            {
+                System.out.println("No es un registrable");
+            }
+        }
+
+        // Se implementa esta utilidad para que se ejecute la GUI:
+        javax.swing.SwingUtilities.invokeLater(new Runnable()
+        {
+            public void run()
+            {
+                new Pantalla().setVisible(true);
+            }
+        });
     }
 }

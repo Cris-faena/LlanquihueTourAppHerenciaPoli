@@ -4,7 +4,7 @@ package model;
  * Se implementa la Clase 'Servicio Turístico' como SUPERCLASE
  * representa en forma genérica un servicio turístico ofrecido por Llanquihue Tour.
  */
-public class ServicioTuristico
+public class ServicioTuristico implements Registrable
 {
     private String nombre;          // Atributo para asignar un nombre a la Clase.
     private double duracionHoras;   // Atributo para asignar la duración de un servicio turístico.
@@ -60,13 +60,23 @@ public class ServicioTuristico
 
     // Se implementa un método "toString":
     /**
-     * Método que devuleve información en una cadena de texto
+     * Método que devuelve información en una cadena de texto
      * @return una descripción del objeto, con 'nombre' y 'duración en horas'.
      */
     @Override
     public String toString()
     {
-        return String.format("El nombre del servicio turístico es: %s y su duración es: %.2f horas.",
+        return String.format("• Nombre del servicio turístico: %s.%n• Duración total: %.2f horas.%n",
                 nombre, duracionHoras);
+    }
+
+    // Se implementa un método "mostrar Resumen" sobrescrito desde la interface.
+    /**
+     * Método que muestra una cadena de texto sobrescrita desde la interface.
+     */
+    @Override
+    public String mostrarResumen()
+    {
+        return "• Este es el método 'mostrarResumen', copiado de la interface, para Servicio Turístico";
     }
 }
