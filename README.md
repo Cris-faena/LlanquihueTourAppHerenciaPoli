@@ -50,34 +50,32 @@ Contiene las imágenes que explican el funcionamiento de la interfaz gráfica de
 ---
 ## 🛠️ Ejemplo de uso de la interfaz gráfica de usuario (GUI)
 
-```md
+
 ![Vista general de la GUI](src/img/principal.png)
 
-```
+
 
 ## 🛠️ Ejemplo para agregar nuevos tours a una colección:
 
-```md
+
 ![Agregar tour desde la GUI](src/img/agregar.png)
-```
+
 
 ## 🛠️ Ejemplo para editar tours de la colección:
 
-```md
+
 ![Editar tour desde la GUI](src/img/editar.png)
-```
 
 ## 🛠️ Ejemplo para eliminar último tour de una colección:
 
-```md
+
 ![Eliminar tour desde la GUI](src/img/eliminar.png)
-```
 
 ## 🛠️ Ejemplo para mostrar resumen de los tours de una colección:
 
-```md
+
 ![Mostrar resumen desde la GUI](src/img/mostrar.png)
-```
+
 
 ## Instrucciones para ejecutar el proyecto
 1. Clona el repositorio desde GitHub:
